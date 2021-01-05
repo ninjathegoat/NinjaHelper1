@@ -109,3 +109,13 @@ const cleanseString = function(string) {
 var listener = app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
+let Discord = require("discord.js")
+let client = new Discord.Client()
+
+client.on('message', msg => {
+  if (msg.isMentioned(client.user)) {
+    msg.reply('pong');
+  }
+
+
+client.login("r1rwJiaUedwvxmBVqgRv5YMPBw3mVfmc")
