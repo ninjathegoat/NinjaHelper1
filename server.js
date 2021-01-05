@@ -112,11 +112,9 @@ var listener = app.listen(process.env.PORT, () => {
 let Discord = require("discord.js")
 let client = new Discord.Client()
 
-client.on('noob', msg => {
-  if (msg.isMentioned(client.user)) {
-    msg.reply('no u');
-  }
-  });
+client.on('message', message => {
+  if (message.content.toLowerCase() === "hello")
+    message.channel.send('bye!')
 
 
-client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.WWB0IpymkXB9PiQTEyomXkpTH3s")
+client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
