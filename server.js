@@ -121,7 +121,7 @@ client.on('message', message => {
   else if (message.content.toLowerCase() === "bot")
     message.channel.send("WHO?")
   else if (message.content.toLowerCase() === "hi")
-    message.channel.send("HIII!")
+    message.channel.send("hey!")
   else if (message.content.toLowerCase() === "table")
     message.channel.send("random")
   else if (message.content.toLowerCase() === "butter")
@@ -132,12 +132,5 @@ client.on('message', message => {
     message.channel.send("like u")
 })
 
-client.on('repeat', message => {
-  while(true){
-  message.channel.send(message.content())
-  if (message.content() === "stop")
-    return;
-  
-}})
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
