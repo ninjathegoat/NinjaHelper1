@@ -131,5 +131,10 @@ client.on('message', message => {
   else if (message.content.toLowerCase() === "trash")
     message.channel.send("like u")
 })
+var messagesent = ""
+client.on("ParrotRepeat", message => {
+  message.channel.send("message")
+  
+})
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
