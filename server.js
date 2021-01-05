@@ -112,10 +112,11 @@ var listener = app.listen(process.env.PORT, () => {
 let Discord = require("discord.js")
 let client = new Discord.Client()
 
-client.on('message', msg => {
+client.on('noob', msg => {
   if (msg.isMentioned(client.user)) {
-    msg.reply('pong');
+    msg.reply('no u');
   }
+  });
 
 
-client.login("r1rwJiaUedwvxmBVqgRv5YMPBw3mVfmc")
+client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.WWB0IpymkXB9PiQTEyomXkpTH3s")
