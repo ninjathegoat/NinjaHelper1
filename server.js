@@ -112,11 +112,24 @@ var listener = app.listen(process.env.PORT, () => {
 let Discord = require("discord.js")
 let client = new Discord.Client()
 
-var dict = {"hello":"bye!","bot":"who?","noob":"no u"}
 
 client.on('message', message => {
-  if (message.content.toLowerCase() === dict.keys.get("message"))
+  if (message.content.toLowerCase() === "hello")
     message.channel.send('bye!')
+  else if (message.content.toLowerCase() === "noob")
+    message.channel.send("NO U!")
+  else if (message.content.toLowerCase() === "bot")
+    message.channel.send("WHO?")
+  else if (message.content.toLowerCase() === "hi")
+    message.channel.send("HIII!")
+  else if (message.content.toLowerCase() === "table")
+    message.channel.send("random")
+  else if (message.content.toLowerCase() === "butter")
+    message.channel.send("noobie")
+  else if (message.content.toLowerCase() === "c ops")
+    message.channel.send("trash game")
+  else if (message.content.toLowerCase() === "trash")
+    message.channel.send("like u")
 })
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
