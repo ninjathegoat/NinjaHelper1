@@ -131,13 +131,13 @@ client.on('message', message => {
   else if (message.content.toLowerCase() === "trash")
     message.channel.send("like u")
 })
-var messagesent = "ello"
-client.on("ParrotRepeat", message => {
-  messagesent = message.content() 
-  message.channel.send(messagesent)
-  if (messagesent === "stop")
+
+client.on('repeat', message => {
+  while(true){
+  message.channel.send(message.content())
+  if (message.content() === "stop")
     return;
   
-})
+}})
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
