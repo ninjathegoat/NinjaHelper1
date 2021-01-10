@@ -130,6 +130,8 @@ client.on('message', message => {
     message.channel.send("trash game")
   else if (message.content.toLowerCase() === "trash")
     message.channel.send("like u")
+  else if (message.content.toLowerCase() === "hezheng")
+    message.channel.send("trash")
 })
 
 
