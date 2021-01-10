@@ -122,8 +122,8 @@ client.on('message', message => {
     message.channel.send("WHO?")
   else if (message.content.toLowerCase() === "hi")
     message.channel.send("hey!")
-  else if (message.content.toLowerCase() === "table")
-    message.channel.send("random")
+  else if (message.content.toLowerCase() === "gay")
+    message.channel.send("no u")
   else if (message.content.toLowerCase() === "codm")
     message.channel.send("trash game")
   else if (message.content.toLowerCase() === "c ops")
@@ -132,6 +132,10 @@ client.on('message', message => {
     message.channel.send("like u")
   else if (message.content.toLowerCase() === "he zheng")
     message.channel.send("trash")
+  else if (message.content.toLowerCase() === "joba")
+    message.channel.send("random")
+  else if (message.content.toLowerCase() === "perkon")
+    message.channel.send("delusional")
 })
 
 
