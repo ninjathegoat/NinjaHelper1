@@ -120,39 +120,24 @@ client.on('ready', () => {
     
     console.log(guild.name)
     
-client.on('message', (receivedMessage) => {
+client.on('message', receivedMessage => {
   
   if (receivedMessage.content.startWith("$")) {
-    processCommand(receivedMessage)
+    let fullCommand = receivedMessage.content.substr(1)
+    let splitCommand = fullCommand.split(" ")
+    let primaryCommand = splitCommand[0]
+    let valueCommand = splitCommand[1]
     
-  }
-})
-function processCommand(receivedMessage) {
-  let fullCommand = receivedMessage.content.substr(1)
-  let splitCommand = fullCommand.split(" ")
-  let primaryCommand = splitCommand[0]
-  let valueCommand = splitCommand[1]
-  
-  if (primaryCommand == "help"){
-    receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
-  if (primaryCommand == "Tax"){
-    receivedMessage.channel.send((valueCommand)*1.08)
-    
-  }
-  
-  }
-}
-    
-    
-    
-    
-    
-    
-  })
-})
+    if (primaryCommand == "help"){
+      receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
+    if (primaryCommand == "Tax"){
+      receivedMessage.channel.send((valueCommand)*1.08)}}}}}
 
-
-
+    
+    
+    
+    
+ 
 
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
