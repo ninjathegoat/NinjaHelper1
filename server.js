@@ -114,7 +114,7 @@ let client = new Discord.Client()
 
 client.on('ready', () => {
   
-  client.user.setActivity("Server", {type: "WATCHING"})
+  client.user.setActivity("Servers", {type: "WATCHING"})
   
   client.guilds.forEach((guild) => {
     
@@ -123,7 +123,7 @@ client.on('ready', () => {
 client.on('message', (receivedMessage) => {
   
 
-  if (receivedMessage.content.startWith("?")) {
+  if (receivedMessage.content.startWith("$")) {
     processCommand(receivedMessage)
     
     }
