@@ -122,12 +122,11 @@ client.on('ready', () => {
     
 client.on('message', (receivedMessage) => {
   
-
   if (receivedMessage.content.startWith("$")) {
     processCommand(receivedMessage)
     
-    }
-  })
+  }
+})
 function processCommand(receivedMessage) {
   let fullCommand = receivedMessage.content.substr(1)
   let splitCommand = fullCommand.split(" ")
@@ -137,7 +136,7 @@ function processCommand(receivedMessage) {
   if (primaryCommand == "help"){
     receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
   if (primaryCommand == "Tax"){
-    receivedMessage.channel.send(valueCommand*1.08)
+    receivedMessage.channel.send((valueCommand)*1.08)
     
   }
   
