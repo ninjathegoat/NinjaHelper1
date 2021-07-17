@@ -132,8 +132,16 @@ function processCommand(receivedMessage) {
   let fullCommand = receivedMessage.content.substr(1)
   let splitCommand = fullCommand.split(" ")
   let primaryCommand = splitCommand[0]
+  let valueCommand = splitCommand[1]
   
-  if (primaryCommand == "help")
+  if (primaryCommand == "help"){
+    print("DankMemer Tax Bot, input command ?tax value .")
+  if (primaryCommand == "Tax"){
+    print(valueCommand*1.08)
+    
+  }
+  
+  }
 }
     
     
