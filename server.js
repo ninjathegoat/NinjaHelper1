@@ -135,9 +135,9 @@ function processCommand(receivedMessage) {
   let valueCommand = splitCommand[1]
   
   if (primaryCommand == "help"){
-    print("DankMemer Tax Bot, input command ?tax value .")
+    receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
   if (primaryCommand == "Tax"){
-    print(valueCommand*1.08)
+    receivedMessage.channel.send(valueCommand*1.08)
     
   }
   
