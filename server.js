@@ -131,7 +131,7 @@ client.on('message', receivedMessage => {
     if (primaryCommand == "help"){
       receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
     if (primaryCommand == "Tax"){
-      receivedMessage.channel.send((valueCommand)*1.08)}}}}}
+      receivedMessage.channel.send((valueCommand)*1.08)}}}})})})
 
     
     
