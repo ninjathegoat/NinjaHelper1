@@ -122,20 +122,20 @@ client.on('ready', () => {
     
 client.on('message', receivedMessage => {
   
-  if (receivedMessage.content.startWith("$")) {
-    let fullCommand = receivedMessage.content.substr(1)
-    let splitCommand = fullCommand.split(" ")
-    let primaryCommand = splitCommand[0]
-    let valueCommand = splitCommand[1]
+  if (receivedMessage.content.startWith("?")) {
+    receivedMessage.channel.send("x")}})})})  
+    //let fullCommand = receivedMessage.content.substr(1)
+    //let splitCommand = fullCommand.split(" ")
+    //let primaryCommand = splitCommand[0]
+    //let valueCommand = splitCommand[1]
     
-    if (primaryCommand == "help"){
-      receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
-    if (primaryCommand == "Tax"){
-      receivedMessage.channel.send((valueCommand)*1.08)}}}})})})
+    //if (primaryCommand == "help"){
+      //receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
+    //if (primaryCommand == "Tax"){
+      //receivedMessage.channel.send((valueCommand)*1.08)}}}})})})
 
     
-    
-    
+  
     
  
 
