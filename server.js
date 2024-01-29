@@ -65,7 +65,7 @@ app.post("/addDream", (request, response) => {
   // so they can write to the database
   if (!process.env.DISALLOW_WRITE) {
     const cleansedDream = cleanseString(request.body.dream);
-    db.run(`INSERT INTO Dreams (dream) VALUES (?)`, cleansedDream, error => {
+    db.run(`INSERT INTO Dreams (dream) VALUES (?)`, cleansedDream, (error) => {
       if (error) {
         response.send({ message: "error!" });
       } else {
@@ -83,13 +83,13 @@ app.get("/clearDreams", (request, response) => {
       "SELECT * from Dreams",
       (err, row) => {
         console.log("row", row);
-        db.run(`DELETE FROM Dreams WHERE ID=?`, row.id, error => {
+        db.run(`DELETE FROM Dreams WHERE ID=?`, row.id, (error) => {
           if (row) {
             console.log(`deleted row ${row.id}`);
           }
         });
       },
-      err => {
+      (err) => {
         if (err) {
           response.send({ message: "error!" });
         } else {
@@ -101,7 +101,7 @@ app.get("/clearDreams", (request, response) => {
 });
 
 // helper function that prevents html/css/script malice
-const cleanseString = function(string) {
+const cleanseString = function (string) {
   return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
@@ -109,35 +109,30 @@ const cleanseString = function(string) {
 var listener = app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
-let Discord = require("discord.js")
-let client = new Discord.Client()
+let Discord = require("discord.js");
+let client = new Discord.Client();
 
-client.on('ready', () => {
-  
-  client.user.setActivity("Servers", {type: "WATCHING"})
-  
+client.on("ready", () => {
+  client.user.setActivity("Servers", { type: "WATCHING" });
+
   client.guilds.forEach((guild) => {
-    
-    console.log(guild.name)
-    
-client.on('message', receivedMessage => {
-  
-  if (receivedMessage.content.startWith("?")) {
-    receivedMessage.channel.send("x")}})})})  
-    //let fullCommand = receivedMessage.content.substr(1)
-    //let splitCommand = fullCommand.split(" ")
-    //let primaryCommand = splitCommand[0]
-    //let valueCommand = splitCommand[1]
-    
-    //if (primaryCommand == "help"){
-      //receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
-    //if (primaryCommand == "Tax"){
-      //receivedMessage.channel.send((valueCommand)*1.08)}}}})})})
+    console.log(guild.name);
 
-    
-  
-    
- 
+    client.on("message", (receivedMessage) => {
+      if (receivedMessage.content.startWith("?")) {
+        receivedMessage.channel.send("x");
+      }
+    });
+  });
+});
+//let fullCommand = receivedMessage.content.substr(1)
+//let splitCommand = fullCommand.split(" ")
+//let primaryCommand = splitCommand[0]
+//let valueCommand = splitCommand[1]
 
+//if (primaryCommand == "help"){
+//receivedMessage.channel.send("DankMemer Tax Bot, input command ?tax value .")
+//if (primaryCommand == "Tax"){
+//receivedMessage.channel.send((valueCommand)*1.08)}}}})})})
 
-client.login("NzkyNTc0NTc2MTQ0MDIzNTgz.X-fsmA.2T2hkyYMmjhDh7wA9jSUHLC-jAA")
+client.login("NzkyNTc0NTc2MTQ0MDIzNTgz.X-fsmA.2T2hkyYMmjhDh7wA9jSUHLC-jAA");
